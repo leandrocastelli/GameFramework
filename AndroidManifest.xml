@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.lcsmobileapps.mrnom.MainActivity"
+            android:name="com.lcsmobileapps.mrnom.MrNomGame"
             android:label="@string/app_name" 
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|orientation">

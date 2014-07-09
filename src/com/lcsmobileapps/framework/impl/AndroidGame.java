@@ -72,41 +72,44 @@ public abstract class AndroidGame extends Activity implements Game {
 		
 		PowerManager powerManager = (PowerManager)getSystemService(Context.POWER_SERVICE);
 		wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "GLGame");
+		
+		
 	}
 	@Override
 	public Input getInput() {
-		// TODO Auto-generated method stub
-		return null;
+		return input;
 	}
 
 	@Override
 	public FileIO getFileIO() {
-		// TODO Auto-generated method stub
-		return null;
+		return fileIO;
 	}
 
 	@Override
 	public Graphics getGraphics() {
-		// TODO Auto-generated method stub
-		return null;
+		return graphics;
 	}
 
 	@Override
 	public Audio getAudio() {
-		// TODO Auto-generated method stub
-		return null;
+		return audio;
 	}
 
 	@Override
 	public void setScreen(Screen screen) {
-		// TODO Auto-generated method stub
+		if (screen == null)
+            throw new IllegalArgumentException("Screen must not be null");
 
+        this.screen.pause();
+        this.screen.dispose();
+        screen.resume();
+        screen.update(0);
+        this.screen = screen;
 	}
 
 	@Override
 	public Screen getCurrentScreen() {
-		// TODO Auto-generated method stub
-		return null;
+		return screen;
 	}
 
 	@Override
@@ -114,5 +117,23 @@ public abstract class AndroidGame extends Activity implements Game {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+    public void onResume() {
+        super.onResume();
+        wakeLock.acquire();
+        screen.resume();
+        renderView.resume();
+    }
+	 @Override
+	    public void onPause() {
+	        super.onPause();
+	        wakeLock.release();
+	        renderView.pause();
+	        screen.pause();
+
+	        if (isFinishing())
+	            screen.dispose();
+	    }
 
 }
