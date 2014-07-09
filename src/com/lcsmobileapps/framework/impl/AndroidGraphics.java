@@ -128,12 +128,12 @@ public class AndroidGraphics implements Graphics {
 
 	@Override
 	public int getHeight() {
-		return frameBuffer.getWidth();
+		return frameBuffer.getHeight();
 	}
 
 	@Override
 	public int getWidth() {
-		return frameBuffer.getHeight(); 
+		return frameBuffer.getWidth(); 
 	}
 
 }

@@ -44,7 +44,7 @@ public class Snake {
 		
 		int len = parts.size() - 1;
 		
-		for (int i = len; i > len; i--) {
+		for (int i = len; i > 0; i--) {
 			SnakePart before = parts.get(i - 1);
 			SnakePart part = parts.get(i);
 			

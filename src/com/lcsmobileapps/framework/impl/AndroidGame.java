@@ -20,6 +20,7 @@ import com.lcsmobileapps.framework.Game;
 import com.lcsmobileapps.framework.Graphics;
 import com.lcsmobileapps.framework.Input;
 import com.lcsmobileapps.framework.Screen;
+import com.lcsmobileapps.mrnom.LoadingScreen;
 
 public abstract class AndroidGame extends Activity implements Game {
 
@@ -114,8 +115,7 @@ public abstract class AndroidGame extends Activity implements Game {
 
 	@Override
 	public Screen getStartScreen() {
-		// TODO Auto-generated method stub
-		return null;
+		return new LoadingScreen(this);
 	}
 	
 	@Override
