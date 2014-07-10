@@ -20,6 +20,10 @@ public class Assets {
 	public static Pixmap headLeft;
 	public static Pixmap headRight;
 	public static Pixmap headDown;
+	public static Pixmap headUp_eat;
+	public static Pixmap headLeft_eat;
+	public static Pixmap headRight_eat;
+	public static Pixmap headDown_eat;
 	public static Pixmap tail;
 	public static Pixmap stain1;
 	public static Pixmap stain2;

@@ -176,13 +176,29 @@ public class GameScreen extends Screen{
 		
 		Pixmap headPixmap = null;
 		if (snake.direction == Snake.UP)
-			headPixmap = Assets.headUp;
+			if (snake.isEating) {
+				headPixmap = Assets.headUp_eat;
+			} else {
+				headPixmap = Assets.headUp;
+			}
 		if (snake.direction == Snake.DOWN)
-			headPixmap = Assets.headDown;
+			if (snake.isEating) {
+				headPixmap = Assets.headDown_eat;
+			} else {
+				headPixmap = Assets.headDown;
+			}
 		if (snake.direction == Snake.LEFT)
-			headPixmap = Assets.headLeft;
+			if (snake.isEating) {
+				headPixmap = Assets.headLeft_eat;
+			} else {
+				headPixmap = Assets.headLeft;
+			}
 		if (snake.direction == Snake.RIGHT)
-			headPixmap = Assets.headRight;
+			if (snake.isEating) {
+				headPixmap = Assets.headRight_eat;
+			} else {
+				headPixmap = Assets.headRight;
+			}
 		
 		x = head.x * 32 + 16;
 		y = head.y*32 + 16;

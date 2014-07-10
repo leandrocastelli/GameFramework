@@ -70,6 +70,7 @@ public class World {
 		}
 		
 		SnakePart head = snake.parts.get(0);
+		snake.isEating = nextStain(head);
 		if (head.x == stain.x && head.y == stain.y){
 			score+= SCORE_INCREMENT;
 			snake.eat();
@@ -85,5 +86,38 @@ public class World {
 				
 			
 		}
+	}
+	public boolean nextStain(SnakePart head) {
+		int direction = snake.direction;
+		boolean isEating = false;
+		if (direction == Snake.UP) {
+			if (head.x == stain.x && 
+					(((head.y - stain.y) == 1) || head.y == WORLD_HEIGHT && stain.y == 0)) {
+				isEating = true;
+				
+			}
+		}
+		if (direction == Snake.DOWN) {
+			if (head.x == stain.x && 
+					(((head.y - stain.y) == -1) || head.y == 0 && stain.y == WORLD_HEIGHT)) {
+				isEating = true;
+				
+			}
+		}
+		if (direction == Snake.LEFT) {
+			if (head.y == stain.y && 
+					(((head.x - stain.x) == 1) || head.x == WORLD_WIDTH && stain.x == 0)) {
+				isEating = true;
+				
+			}
+		}
+		if (direction == Snake.RIGHT) {
+			if (head.y == stain.y && 
+					(((head.x - stain.x) == -1) || head.x == 0 && stain.x == WORLD_WIDTH)) {
+				isEating = true;
+				
+			}
+		}
+		return isEating;
 	}
 }

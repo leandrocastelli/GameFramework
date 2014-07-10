@@ -12,7 +12,7 @@ public class Snake {
 	
 	public List<SnakePart> 	parts = new ArrayList<SnakePart>();
 	public int direction;
-	
+	public boolean isEating = false;
 	public Snake() {
 		direction = UP;
 		parts.add (new SnakePart(5, 6));
@@ -89,4 +89,5 @@ public class Snake {
 		}
 		return false;
 	}
+
 }
