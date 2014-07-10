@@ -115,7 +115,7 @@ public abstract class AndroidGame extends Activity implements Game {
 
 	@Override
 	public Screen getStartScreen() {
-		return new LoadingScreen(this);
+		return null;
 	}
 	
 	@Override
