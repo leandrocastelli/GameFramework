@@ -186,8 +186,7 @@ public class GLGame extends Activity implements Game, Renderer{
 
 	@Override
 	public Screen getCurrentScreen() {
-		// TODO Auto-generated method stub
-		return null;
+		return screen;
 	}
 
 	@Override
