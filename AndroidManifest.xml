@@ -6,8 +6,9 @@
     android:installLocation="preferExternal" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="19" />
+        
+        android:targetSdkVersion="19" 
+        android:minSdkVersion="8"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 
@@ -28,9 +29,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.lcsmobileapps.glbasics.FirstTriangleTest"
+            android:name="com.lcsmobileapps.glbasics.CannonGravityTest"
             android:label="@string/app_name" 
-            android:screenOrientation="portrait"
+            android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
